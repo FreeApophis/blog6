@@ -8,8 +8,27 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="grid-container">
+      <header class="header">
+        Header
+      </header>
+  
+      <main class="main">
+        <%= yield %>
+      </main>
+  
+      <div class="sidebar sidebar-left">
+        Left Sidebar
+      </div>
+  
+      <div class="sidebar sidebar-right">
+        Right Sidebar
+      </div>
+  
+      <footer class="footer">
+        Footer
+      </footer>
+    </div>
   </body>
 </html>

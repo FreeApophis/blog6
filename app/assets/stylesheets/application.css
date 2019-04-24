@@ -13,3 +13,61 @@
  *= require_tree .
  *= require_self
  */
+
+$white: #fff !default;
+$gray: #f9f9f9 !default;
+$accent-color: #145474 !default;
+
+
+// Grid structural styles (CSS Grid)
+.header { grid-area: header; }
+.main { grid-area: main; }
+.sidebar-left { grid-area: sidebar-left; }
+.sidebar-right { grid-area: sidebar-right; }
+.footer { grid-area: footer; }
+
+.grid-container {
+  max-width: 900px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-areas: "header"
+                       "sidebar-left"
+                       "main"
+                       "sidebar-right"
+                       "footer";
+}
+
+@media (min-width: 540px) {
+  .grid-container {
+    grid-template-columns: 150px 1fr 150px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header header header"
+                         "sidebar-left main sidebar-right"
+                         "footer footer footer";
+  }
+}
+
+// Visual styles
+.page {
+  background-color: $gray;
+}
+
+.header,
+.footer {
+  padding: 20px;
+  background-color: $accent-color;
+  color: $white;
+  text-align: center;
+}
+
+.main {
+  padding: 25px;
+}
+
+.sidebar {
+  padding: 25px;
+  background-color: darken($gray, 3%);
+}

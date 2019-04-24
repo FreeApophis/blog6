@@ -7,6 +7,13 @@
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.0.0-alpha.tgz#84be50626a43fe431789243c6b13c14f922bf048"
   integrity sha512-hBaruc8FMus0EuLL2LzPHHZpQUHzNrvDzmy9EN03P5K4DQR43FTdksCu77kbx2TrKlrvjnJ1PBbcx87jGotykw==
 
+"@rails/actiontext@^6.0.0-beta3":
+  version "6.0.0-beta3"
+  resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-6.0.0-beta3.tgz#355d71894b4aa1f6d892a8d50b02408d78c2117b"
+  integrity sha512-BjX8lT5b6RfQRfVKnm7Q4lkn7EMFI2wJSbotUIHs0C2Fv6Rlf0AyBYAOttK6ORP3Cx5t0QDwkmb7qvOGyisQhw==
+  dependencies:
+    "@rails/activestorage" "^6.0.0-alpha"
+
 "@rails/activestorage@^6.0.0-alpha":
   version "6.0.0-alpha"
   resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-6.0.0-alpha.tgz#6eb6c0f49bcaa4ad68fcd13a750b9a17f76f086f"
@@ -2295,6 +2302,11 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
+
+trix@^1.0.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/trix/-/trix-1.1.1.tgz#ca8a3fab4d23d960a17e88441d601cb22a86f5d5"
+  integrity sha512-dNHTcryRK0EmwCyJDOBrG6OznL8HNEVVlecq/xzxLj3M9Eht5DV4yl+eCYX8RKyfrtBcNki+mpKIxESgXaGGZA==
 
 turbolinks@^5.2.0:
   version "5.2.0"

@@ -9,25 +9,25 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div class="grid-container">
-      <header class="header">
-        Header
+    <div class="container">
+      <header>
+        Header content
       </header>
-  
-      <main class="main">
+
+      <nav>
+        Navigation
+      </nav>
+
+      <main>
         <%= yield %>
       </main>
-  
-      <div class="sidebar sidebar-left">
-        Left Sidebar
-      </div>
-  
-      <div class="sidebar sidebar-right">
-        Right Sidebar
-      </div>
-  
-      <footer class="footer">
-        Footer
+
+      <aside>
+        Sidebar / Ads
+      </aside>
+
+      <footer>
+        Footer content
       </footer>
     </div>
   </body>

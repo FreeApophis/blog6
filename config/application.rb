@@ -16,6 +16,6 @@ module Blog6
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    config.hosts << "apophis.ch"
+    config.hosts = []
   end
 end

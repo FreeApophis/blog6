@@ -15,7 +15,12 @@
       </header>
 
       <nav>
-        Navigation
+        <% if current_user  %>
+          Logged in: <%= current_user.email %>
+        <% else %>
+        <%= current_user.email %>
+          Logged out
+        <% end %>
       </nav>
 
       <main>

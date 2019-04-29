@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.5'
 # User authentication
 gem 'devise', '~> 4.6.2'
 
+# user authorization
+gem "pundit"
+
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root 'blogs#index'
+
   resources :pages
   resources :tenants
   resources :blog_posts
-  root 'blogs#index'
   resources :blogs
 end

@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>String</th>
+      <th>Title</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @pages.each do |page| %>
       <tr>
-        <td><%= page.string %></td>
+        <td><%= page.title %></td>
         <td><%= link_to 'Show', page %></td>
         <td><%= link_to 'Edit', edit_page_path(page) %></td>
         <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>

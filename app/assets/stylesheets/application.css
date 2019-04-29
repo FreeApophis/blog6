@@ -14,40 +14,19 @@
  *= require_self
  */
 
-:root {
-  --primary: white;
-  --secondary: HSL(225, 6%, 51%);
-  --base: #282F44;
-  --base2: HSL(225, 6%, 21%);
-  --text-color: HSL(225, 6%, 21%);
-  --link-color: #093341;
-}
-
 html {
-    font-size: 1em;
-    line-height: 1.5;
     height: 100%;
 }
 
 body {
-  color: var(--text-color);
-  font-size: 17px;
 }
 
 body, h1, h2 {
-  font-family: Montserrat, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-.wf-active h1, .wf-active h2 {
-   opacity: 1;
-   transition: opacity .1s
-}
-
 h1 {
-  color: var(--primary);
-  font-size: 1.3rem;
 }
 
 
@@ -58,21 +37,15 @@ h1 {
 }
 
 h2 {
-  color: var(--primary);
-  font-size: 1.1rem;
 }
-
-a, a:link    { color: var(--link-color) }
-/*a:visited { color: rgba(255,255,255,0.3) }*/
 
 .hidden {
     display: none !important;
 }
-.text-center, footer, header {
+
+.text-center {
   text-align: center;
 }
-
-
 
 
 .container {
@@ -82,20 +55,20 @@ a, a:link    { color: var(--link-color) }
     "nav content side"
     "footer footer footer";
   height: 100vh;
+  max-width: 1200px;
+  margin: auto;
   grid-template-columns: 200px 1fr 200px;
   grid-template-rows: auto 1fr auto;
   grid-gap: 10px;
 }
 
 header {
-  background: #F4991A;
   grid-area: header;
-  padding: 1rem 0;
-
-  padding: 0 1rem;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
+  display: flex;
+  min-height: 100px;
+  background: #f0b7a1;  
+  background: linear-gradient(to bottom, #f0b7a1 0%,#8c3310 50%,#752201 51%,#bf6e4e 100%);
 }
 
 nav, aside {
@@ -103,11 +76,7 @@ nav, aside {
 }
 
 nav, aside, main {
-  text-transform: uppercase;
-  color: lightslategray;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 nav {
@@ -129,7 +98,7 @@ aside {
 footer {
   background: #321313;
   grid-area: footer;
-  color: var(--primary);
+  color: white;
 }
 
 @media (max-width: 768px) {

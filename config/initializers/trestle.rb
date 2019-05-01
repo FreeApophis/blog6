@@ -117,8 +117,8 @@ Trestle.configure do |config|
   #   def initialize(builder, template, name, options={}, &block); end
   #   def render; end
   # end
-  #
-  # config.form_field :custom, CustomFormField
+
+  config.form_field :rich_text_area, RichTextArea
 
   # == Debugging Options
   #

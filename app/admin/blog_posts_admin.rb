@@ -11,7 +11,7 @@ Trestle.resource(:blog_posts) do
 
   form do |blog_post|
     text_field :title
-    text_area :content
+    rich_text_area :content
 
     row do
       col(xs: 6) { datetime_field :published_at }

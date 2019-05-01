@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :domains
   root 'blogs#index'
 
   devise_for :users

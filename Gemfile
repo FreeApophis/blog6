@@ -22,17 +22,20 @@ gem 'jbuilder', '~> 2.5'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use Active Storage variant
+gem 'image_processing', '~> 1.2'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.1', require: false
+
 # User authentication
 gem 'devise', '~> 4.6.2'
 
 # user authorization
 gem "pundit"
 
-# Use Active Storage variant
-gem 'image_processing', '~> 1.2'
-
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.1', require: false
+# Administration Interface
+gem "trestle"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

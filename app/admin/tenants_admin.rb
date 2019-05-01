@@ -10,6 +10,13 @@ Trestle.resource(:tenants) do
 
   form do |tenant|
     text_field :name
+
+    tab :domains, badge: tenant.domains.size do
+      table tenant.domains, admin: :domains do
+        column :url, link: true
+        actions
+      end
+    end
   end
 
   params do |params|

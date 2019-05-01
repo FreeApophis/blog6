@@ -4,13 +4,14 @@ Trestle.resource(:blog_posts) do
   end
 
   table do
-    column :name
+    column :title
     column :published_at, align: :center
     actions
   end
 
   form do |blog_post|
-    text_field :name
+    text_field :title
+    text_area :content
 
     row do
       col(xs: 6) { datetime_field :published_at }

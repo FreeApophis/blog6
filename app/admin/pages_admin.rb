@@ -1,10 +1,10 @@
 Trestle.resource(:pages) do
   menu do
-    item :pages, icon: "fa fa-sticky-note"
+    item :pages, icon: "fa fa-sticky-note", group: :content
   end
 
   table do
-    column :title
+    column :title, link: true
     actions
   end
 

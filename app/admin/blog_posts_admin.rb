@@ -1,11 +1,18 @@
 Trestle.resource(:blog_posts) do
   menu do
-    item :blog_posts, icon: "fa fa-rss-square"
+    item :blog_posts, icon: "fa fa-rss-square", group: :content
   end
 
+  scope :all, default: true
+  scope :published
+  scope :drafts, -> { BlogPost.unpublished }
+
   table do
-    column :title
-    column :published_at, align: :center
+    column :title, link: true
+    column :published, align: :center do |blog_post|
+      status_tag(icon('fa fa-check'), :success) if blog_post.published?
+    end
+    column :published_at, align: :left
     actions
   end
 

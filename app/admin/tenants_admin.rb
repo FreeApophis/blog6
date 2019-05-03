@@ -1,6 +1,6 @@
 Trestle.resource(:tenants) do
   menu do
-    item :tenants, icon: "fa fa-database"
+    item :tenants, icon: "fa fa-database", group: :site_configuration
   end
 
   table do

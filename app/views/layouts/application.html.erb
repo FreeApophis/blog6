@@ -21,7 +21,12 @@
           Logged out
         <% end %>
 
-        Host: <%= current_tenant %>
+        host: <%= request.host %><br>
+        <% if current_tenant  %>
+          tenant: <%= current_tenant.name %>
+        <% else %>
+          Unconfigured tenant
+        <% end %>
       </nav>
 
       <main>

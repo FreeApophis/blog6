@@ -1,3 +1,3 @@
 class Domain < ApplicationRecord
-  belongs_to :tenants
+  belongs_to :tenant
 end

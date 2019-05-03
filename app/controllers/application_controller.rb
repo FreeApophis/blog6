@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def current_tenant
     domain = Domain.find_by url: request.host
-    if domain
+    if domain && domain.tenant
       domain.tenant
     end
   end

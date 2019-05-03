@@ -1,6 +1,6 @@
 Trestle.resource(:blog_posts) do
   menu do
-    item :blog_posts, icon: "fa fa-star"
+    item :blog_posts, icon: "fa fa-rss-square"
   end
 
   table do
@@ -18,14 +18,7 @@ Trestle.resource(:blog_posts) do
     end
   end
 
-  # By default, all parameters passed to the update and create actions will be
-  # permitted. If you do not have full trust in your users, you should explicitly
-  # define the list of permitted parameters.
-  #
-  # For further information, see the Rails documentation on Strong Parameters:
-  #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
-  #
-  # params do |params|
-  #   params.require(:blog_post).permit(:name, ...)
-  # end
+  params do |params|
+    params.require(:blog_post).permit(:title, :content, :published_at)
+  end
 end

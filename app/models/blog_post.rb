@@ -5,6 +5,6 @@ class BlogPost < ApplicationRecord
   scope :unpublished, -> { where('published_at >= ?', Time.zone.now) }
 
   def published?
-    published_at < DateTime.now
+    published_at && published_at < DateTime.now
   end
 end

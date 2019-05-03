@@ -120,6 +120,14 @@ Trestle.configure do |config|
 
   config.form_field :rich_text_area, RichTextArea
 
+  config.hook(:javascripts) do
+    javascript_pack_tag 'trix', 'data-turbolinks-track': 'reload'
+  end
+
+  config.hook(:stylesheets) do
+    stylesheet_link_tag 'trix', media: 'all', 'data-turbolinks-track': 'reload'
+  end
+
   # == Debugging Options
   #
   # Enable debugging of form errors. Defaults to true in development mode.

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_01_185541) do
+ActiveRecord::Schema.define(version: 2019_05_03_134534) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "name", null: false
@@ -60,13 +60,8 @@ ActiveRecord::Schema.define(version: 2019_05_01_185541) do
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "domains_tenants", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
-    t.bigint "domain_id", null: false
-    t.bigint "tenant_id", null: false
-    t.index ["domain_id", "tenant_id"], name: "index_domains_tenants_on_domain_id_and_tenant_id"
-    t.index ["tenant_id", "domain_id"], name: "index_domains_tenants_on_tenant_id_and_domain_id"
+    t.bigint "tenant_id"
+    t.index ["tenant_id"], name: "index_domains_on_tenant_id"
   end
 
   create_table "pages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|

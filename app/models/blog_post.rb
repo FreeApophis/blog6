@@ -1,9 +1,12 @@
 class BlogPost < ApplicationRecord
   include Commentable
 
+  extend FriendlyId
+  friendly_id :title, :use => :history
+
   has_rich_text :content
 
-  belongs_to :user
+  # belongs_to :user
 
   scope :published, -> { where('published_at < ?', Time.zone.now) }
   scope :unpublished, -> { where('published_at >= ?', Time.zone.now) }

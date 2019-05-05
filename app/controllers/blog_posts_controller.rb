@@ -1,28 +1,20 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
 
-  # GET /blog_posts
-  # GET /blog_posts.json
   def index
     @blog_posts = BlogPost.all
   end
 
-  # GET /blog_posts/1
-  # GET /blog_posts/1.json
   def show
   end
 
-  # GET /blog_posts/new
   def new
     @blog_post = BlogPost.new
   end
 
-  # GET /blog_posts/1/edit
   def edit
   end
 
-  # POST /blog_posts
-  # POST /blog_posts.json
   def create
     @blog_post = BlogPost.new(blog_post_params)
 
@@ -37,8 +29,6 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blog_posts/1
-  # PATCH/PUT /blog_posts/1.json
   def update
     respond_to do |format|
       if @blog_post.update(blog_post_params)
@@ -51,8 +41,6 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  # DELETE /blog_posts/1
-  # DELETE /blog_posts/1.json
   def destroy
     @blog_post.destroy
     respond_to do |format|
@@ -62,12 +50,10 @@ class BlogPostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_blog_post
-      @blog_post = BlogPost.find(params[:id])
+      @blog_post = BlogPost.friendly.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def blog_post_params
       params.require(:blog_post).permit(:title)
     end

@@ -16,7 +16,7 @@ Trestle.resource(:blog_posts) do
     actions
   end
 
-  form do |blog_post|
+  form dialog: true do |blog_post|
     text_field :title
     rich_text_area :content
 

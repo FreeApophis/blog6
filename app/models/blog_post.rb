@@ -6,7 +6,7 @@ class BlogPost < ApplicationRecord
 
   has_rich_text :content
 
-  # belongs_to :user
+  belongs_to :author, class_name: 'User'
 
   scope :published, -> { where('published_at < ?', Time.zone.now) }
   scope :unpublished, -> { where('published_at >= ?', Time.zone.now) }

@@ -9,6 +9,7 @@ Trestle.resource(:blog_posts) do
 
   table do
     column :title, link: true
+    column :author
     column :published, align: :center do |blog_post|
       status_tag(icon('fa fa-check'), :success) if blog_post.published?
     end
@@ -26,6 +27,9 @@ Trestle.resource(:blog_posts) do
   end
 
   params do |params|
-    params.require(:blog_post).permit(:title, :content, :published_at)
+    params
+      .require(:blog_post)
+      .permit(:title, :content, :published_at)
+      .merge({author: current_user})
   end
 end

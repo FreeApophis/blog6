@@ -1,0 +1,9 @@
+<%= form_for([commentable, comment]) do |f| %>
+  <div>
+    <%= f.label :text %>
+    <%= f.text_area :text, :placeholder => t('.text_description') %>
+  </div>
+  <div>
+    <%= f.button %>
+  </div>
+<% end %>

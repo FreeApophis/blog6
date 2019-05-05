@@ -1,0 +1,14 @@
+<div>
+  <h2><%= t '.comments' %></h2>
+  <% commentable.comments.includes(:user).each do |comment| %>
+    <div>
+      <%= t comment.text %></h2>
+    </div>
+  <% end %>
+
+  <% unless commentable.comments.any? %>
+      <div>
+        <%= t '.no_comments' %>
+      </div>
+  <% end %>
+</div>

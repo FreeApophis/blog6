@@ -1,6 +1,6 @@
 Trestle.resource(:comments) do
   menu do
-    item :comments, icon: "fa fa-comments", group: :content
+    item :comments, icon: "fa fa-comments", group: :content, badge: Comment.count
   end
 
   table do

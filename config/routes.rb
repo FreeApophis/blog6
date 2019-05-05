@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  resources :domains
   root 'blogs#index'
+
+  concern :commentable do
+    resources :comments, only: [:create]
+  end
 
   devise_for :users
 
-  resources :pages
-  resources :tenants
-  resources :blog_posts
   resources :blogs
+  resources :blog_posts, concerns: [:commentable]
+
+  resources :pages
+
+  resources :domains
+  resources :tenants
 end

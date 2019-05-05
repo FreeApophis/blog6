@@ -32,13 +32,16 @@ gem 'bootsnap', '>= 1.4.1', require: false
 gem 'devise', '~> 4.6.2'
 
 # user authorization
-gem "pundit"
+gem 'pundit'
 
 # Administration Interface
-gem "trestle"
+gem 'trestle'
 
 # Pagination
-gem "kaminari"
+gem 'kaminari'
+
+# Friendly names
+gem 'friendly_id'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

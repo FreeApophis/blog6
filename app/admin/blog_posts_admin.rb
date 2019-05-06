@@ -21,25 +21,26 @@ Trestle.resource(:blog_posts) do
   end
 
   form dialog: false do |blog_post|
-    text_field :title
-    rich_text_area :content
+    tab :post do
+      text_field :title
+      rich_text_area :content
 
-    row do
-      col(xs: 6) { datetime_field :published_at }
+      row do
+        col(xs: 6) { datetime_field :published_at }
+      end
+
+       sidebar do
+         select :author_id, User.all
+  collection_select :tenant_ids, Tenant.all, :id, :name, { label: "Tenant(s)" }, multiple: true
+  #       collection_check_boxes :tenant_ids, Tenant.all, :id, :name, { label: "Tenant(s)" }
+       end
     end
-
-     sidebar do
-       select :author_id, User.all
-#	       collection_select :tenant_ids, Tenant.all, :id, :name, { label: "Tenant(s)" }, multiple: true
-       collection_check_boxes :tenant_ids, Tenant.all, :id, :name, { label: "Tenant(s)" }
-     end
+    tab :comments  do
+      "Something something dark side"
+    end
   end
 
-  
-
   params do |params|
-    params
-      .require(:blog_post)
-      .permit(:title, :content, :published_at, :author_id, :tenant_ids)
+    params.require(:blog_post).permit(:title, :content, :published_at, :tenant_ids => [])
   end
 end

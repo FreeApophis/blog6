@@ -31,8 +31,7 @@ Trestle.resource(:blog_posts) do
 
        sidebar do
          select :author_id, User.all
-  collection_select :tenant_ids, Tenant.all, :id, :name, { label: "Tenant(s)" }, multiple: true
-  #       collection_check_boxes :tenant_ids, Tenant.all, :id, :name, { label: "Tenant(s)" }
+         collection_check_boxes :tenant_ids, Tenant.all, :id, :name, { label: "Tenant(s)" }
        end
     end
     tab :comments  do
@@ -41,6 +40,6 @@ Trestle.resource(:blog_posts) do
   end
 
   params do |params|
-    params.require(:blog_post).permit(:title, :content, :published_at, :tenant_ids => [])
+    params.require(:blog_post).permit(:title, :content, :author_id, :published_at, :tenant_ids => [])
   end
 end

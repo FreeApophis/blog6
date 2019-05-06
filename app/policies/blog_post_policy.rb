@@ -8,7 +8,7 @@ class BlogPostPolicy < ApplicationPolicy
     end
 
     def resolve
-      @scope.all
+      @scope.published
     end
   end
 

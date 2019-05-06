@@ -1,4 +1,4 @@
-module Commentable
+module HasComments
   extend ActiveSupport::Concern
 
   included do

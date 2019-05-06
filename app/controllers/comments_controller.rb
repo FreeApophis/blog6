@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 
   def load_commentable
     if params[:blog_post_id]
-      return BlogPost.find(params[:blog_post_id])
+      return BlogPost.friendly.find(params[:blog_post_id])
     end
     raise 'not commentable'
   end

@@ -100,11 +100,12 @@ ActiveRecord::Schema.define(version: 2019_05_05_200613) do
 
   create_table "tenantables", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.bigint "tenant_id", null: false
+    t.string "tenantable_type", null: false
     t.bigint "tenantable_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["tenant_id"], name: "index_tenantables_on_tenant_id"
-    t.index ["tenantable_id"], name: "index_tenantables_on_tenantable_id"
+    t.index ["tenantable_type", "tenantable_id"], name: "index_tenantables_on_tenantable_type_and_tenantable_id"
   end
 
   create_table "tenants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
@@ -142,6 +143,5 @@ ActiveRecord::Schema.define(version: 2019_05_05_200613) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "blog_posts", "users", column: "author_id"
   add_foreign_key "comments", "users"
-  add_foreign_key "tenantables", "tenantables"
   add_foreign_key "tenantables", "tenants"
 end

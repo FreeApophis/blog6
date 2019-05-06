@@ -9,7 +9,7 @@ Trestle.resource(:domains) do
     actions
   end
 
-  form do |domain|
+  form dialog: true do |domain|
     text_field :url
     select :tenant_id, Tenant.all
   end

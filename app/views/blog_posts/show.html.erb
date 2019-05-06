@@ -1,14 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog_post.title %>
-</p>
 
-  <%= @blog_post.content %>
+<h1><%= @blog_post.title %></h1>
+
+<%= @blog_post.content %>
 
 <%= render 'comments/comments', commentable: @blog_post %>
 <%= render 'comments/comment_form', commentable: @blog_post, comment: @blog_post.comments.build %>
 
-<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
 <%= link_to 'Back', blog_posts_path %>

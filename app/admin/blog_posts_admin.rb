@@ -29,7 +29,9 @@ Trestle.resource(:blog_posts) do
     end
 
      sidebar do
-       select :tenants, Tenant.all, {}, multiple: true
+       select :author_id, User.all
+#	       collection_select :tenant_ids, Tenant.all, :id, :name, { label: "Tenant(s)" }, multiple: true
+       collection_check_boxes :tenant_ids, Tenant.all, :id, :name, { label: "Tenant(s)" }
      end
   end
 
@@ -38,7 +40,6 @@ Trestle.resource(:blog_posts) do
   params do |params|
     params
       .require(:blog_post)
-      .permit(:title, :content, :published_at)
-      .merge({author: current_user})
+      .permit(:title, :content, :published_at, :author_id, :tenant_ids)
   end
 end

@@ -12,6 +12,8 @@ class BlogPost < ApplicationRecord
   scope :published, -> { where('published_at < ?', Time.zone.now) }
   scope :unpublished, -> { where('published_at IS NULL OR published_at >= ?', Time.zone.now) }
 
+  validates :title, presence: true
+
   def published?
     published_at && published_at < DateTime.now
   end

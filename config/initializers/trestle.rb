@@ -128,6 +128,10 @@ Trestle.configure do |config|
     stylesheet_link_tag 'trix', media: 'all', 'data-turbolinks-track': 'reload'
   end
 
+  config.hook("view.header") do
+    render "admin/header"
+  end
+
   # == Debugging Options
   #
   # Enable debugging of form errors. Defaults to true in development mode.

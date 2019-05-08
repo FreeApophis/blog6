@@ -9,7 +9,9 @@ Trestle.resource(:tenants) do
   end
 
   form do |tenant|
-    text_field :name
+    tab :tenant do
+      text_field :name
+    end
 
     tab :domains, badge: tenant.domains.size do
       table tenant.domains, admin: :domains do

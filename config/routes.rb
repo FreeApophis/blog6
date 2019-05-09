@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'blogs#index'
+  root 'blog_posts#index'
 
   concern :commentable do
     resources :comments, only: [:create]

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :tags
   root 'blog_posts#index'
 
   concern :commentable do
@@ -10,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :blog_posts, only:[:show, :index], concerns: [:commentable]
   resources :pages, only: [:show, :index], concerns: [:commentable]
+  resources :tags, only: [:show, :index]
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tags
   root 'blog_posts#index'
 
   concern :commentable do

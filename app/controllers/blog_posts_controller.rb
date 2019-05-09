@@ -1,8 +1,6 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: [:show]
 
-
-
   def index
     @blog_posts  = secure_scope
   end

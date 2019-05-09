@@ -17,6 +17,8 @@ class CommentsController < ApplicationController
   end
 
   def load_commentable
+    if params[:page_id]
+      return Page.friendly.find(params[:page_id])
     if params[:blog_post_id]
       return BlogPost.friendly.find(params[:blog_post_id])
     end

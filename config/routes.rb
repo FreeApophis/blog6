@@ -7,11 +7,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :blogs
-  resources :blog_posts, only:[:show,:index], concerns: [:commentable]
-
-  resources :pages
-
-  resources :domains
-  resources :tenants
+  resources :blog_posts, only:[:show, :index], concerns: [:commentable]
+  resources :pages, only: [:show, :index]
 end

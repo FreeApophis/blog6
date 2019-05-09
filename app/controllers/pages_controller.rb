@@ -10,6 +10,11 @@ class PagesController < ApplicationController
 
   private
     def set_page
-      @page = Page.find(params[:id])
+      @page = Page.friendly.find(params[:id])
+      authorize @page
+    end
+
+    def secure_scope
+       policy_scope(Page).by_tenant(current_tenant)
     end
 end

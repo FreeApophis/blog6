@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :blog_posts, only:[:show, :index], concerns: [:commentable]
-  resources :pages, only: [:show, :index]
+  resources :pages, only: [:show, :index], concerns: [:commentable]
 end

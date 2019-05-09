@@ -5,6 +5,9 @@ Trestle.resource(:comments) do
 
   table do
     column :text
+    column :commented do |comment|
+      comment.commentable
+    end
     column :created_at, align: :center
     actions
   end

@@ -14,11 +14,11 @@ Trestle.resource(:pages) do
   form do |page|
     text_field :title
     rich_text_area :content
-
+    check_box :comments_allowed
     collection_check_boxes :tenant_ids, Tenant.all, :id, :name, { label: "Tenant(s)" }
   end
 
   params do |params|
-    params.require(:page).permit(:title, :content, :tenant_ids => [])
+    params.require(:page).permit(:title, :content, :comments_allowed, :tenant_ids => [])
   end
 end

@@ -1,4 +1,5 @@
 class Page < ApplicationRecord
+  include HasComments
   include HasTenants
 
   extend FriendlyId

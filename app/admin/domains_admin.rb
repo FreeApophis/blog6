@@ -1,6 +1,6 @@
 Trestle.resource(:domains) do
   menu do
-    item :domains, icon: "fa fa-star", group: :site_configuration
+    item :domains, icon: "fa fa-sitemap", group: :site_configuration
   end
 
   table do

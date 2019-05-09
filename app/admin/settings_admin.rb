@@ -1,35 +1,23 @@
 Trestle.resource(:settings) do
   menu do
-    item :settings, icon: "fa fa-star"
+    item :settings, icon: "fa fa-cogs", group: :site_configuration
   end
 
-  # Customize the table columns shown on the index view.
-  #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
+  table do
+    column :key
+    column :value
+    column :tenant
 
-  # Customize the form fields shown on the new/edit views.
-  #
-  # form do |setting|
-  #   text_field :name
-  #
-  #   row do
-  #     col(xs: 6) { datetime_field :updated_at }
-  #     col(xs: 6) { datetime_field :created_at }
-  #   end
-  # end
+    actions
+  end
 
-  # By default, all parameters passed to the update and create actions will be
-  # permitted. If you do not have full trust in your users, you should explicitly
-  # define the list of permitted parameters.
-  #
-  # For further information, see the Rails documentation on Strong Parameters:
-  #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
-  #
-  # params do |params|
-  #   params.require(:setting).permit(:name, ...)
-  # end
+  form do |setting|
+    text_field :key
+    text_area :value
+    select :tenant_id, Tenant.all
+  end
+
+  params do |params|
+    params.require(:setting).permit(:key, :value, :tenant_id)
+  end
 end

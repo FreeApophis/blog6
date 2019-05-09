@@ -5,13 +5,15 @@
     --header-height: 150px;
     --site-bg-start: #cfd9df;
     --site-bg-end: #e2ebf0;
+    --tardis-blue: #003b6f;
 }
 
 html {
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
   font-size: 14pt;
-  background: linear-gradient(to top, var(--site-bg-start) 0%, var(--site-bg-end) 100%);
+  background: var(--tardis-blue);
+/*  background: linear-gradient(to top, var(--site-bg-start) 0%, var(--site-bg-end) 100%); */
 }
 
 
@@ -27,8 +29,6 @@ html {
 
 
 header {
-  background: rgb(2,0,36);
-  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 38%, rgba(0,212,255,1) 100%);
   min-height: var(--header-height);
 }
 
@@ -75,7 +75,6 @@ footer ul {
 .header {
   grid-column: 1/5;
   grid-row: 1/2;
-  background: green;
 }
 
 header {
@@ -97,8 +96,7 @@ main {
 
 aside {
   grid-column: 1/2;
-  grid-row: 2/3;
-  display: none;
+  grid-row: 2/4;
 }
 
 footer {

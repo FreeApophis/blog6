@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="grid-notice">Your browser does not support grid ... get a real browser</div>
+      <div class="header"></div>
       <header>
         Header content
       </header>
@@ -33,15 +33,36 @@
       </nav>
 
       <main>
+        <div class="grid-notice">Your browser does not support grid ... get a real browser</div>
+        <div class="media-phone">Phone</div>
+        <div class="media-tablet-portrait">Tablet Portrait</div>
+        <div class="media-tablet-landscape">Tablet Landscape</div>
+        <div class="media-desktop-small">Small Desktop</div>
+        <div class="media-desktop">Desktop</div>
         <%= yield %>
       </main>
 
       <aside>
-        <%= render 'blocks/tardis' %>
+        <%#= render 'blocks/tardis' %>
       </aside>
 
       <footer>
-        Footer content
+        <ul>
+          <li><a href="#">Impressum</li>
+          <li><a href="#">Impressum</li>
+        </ul>
+        <ul>
+          <li><a href="#">Foodblog</li>
+          <li><a href="#">Papas Blog</li>
+          <li><a href="#">Thomas Bruderer</li>
+          <li><a href="#">Apophis</li>
+        </ul>
+        <ul>
+          <li><a href="#">Apophis</li>
+        </ul>
+        <ul>
+          <li><a href="#">Apophis</li>
+        </ul>
       </footer>
     </div>
   </body>

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,500');
+
+:root {
+    --warning-bg-color:#fcc;
+}
+
+html {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  font-size: 14pt;
+  background: var(--background-color);
+}
+
+
+.grid-notice {
+  background: var(--warning-bg-color);
+}
+
+@supports(display: grid) {
+  .grid-notice {
+    display: none;
+  }
+}
+
+.container {
+  display:  grid;
+  grid-template-columns: 1fr 300px 900px 1fr;  
+  grid-template-rows: 120px 1fr 200px;  
+  min-height: 100vh;
+}
+
+header {
+  grid-column: 1/5;
+  grid-row: 1/2;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 38%, rgba(0,212,255,1) 100%);
+}
+
+nav {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+main {
+  grid-column: 3/4;
+  grid-row: 2/3;
+
+  background: #eee;
+}
+
+aside {
+  display: none;
+}
+
+footer {
+  grid-column: 1/5;
+  grid-row: 3/4;
+}

@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog6</title>
+    <title><%= current_tenant ? current_tenant.name : "Blog 6" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <style type="text/css">
+      :root { --background-color: #ddd; }
+    </style>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <div class="container">
+      <div class="grid-notice">Your browser does not support grid ... get a real browser</div>
       <header>
         Header content
+        <%= render 'blocks/tardis' %>
       </header>
 
       <nav>
@@ -34,7 +38,6 @@
       </main>
 
       <aside>
-        Sidebar / Ads
       </aside>
 
       <footer>

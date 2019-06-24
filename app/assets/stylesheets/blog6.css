@@ -30,6 +30,7 @@ html {
 
 header {
   min-height: var(--header-height);
+  background: #888;
 }
 
 footer {

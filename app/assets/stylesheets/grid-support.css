@@ -1,0 +1,11 @@
+.grid-notice {
+  background: var(--warning-bg-color);
+}
+
+@supports(display: grid) {
+  .grid-notice {
+    display: none;
+  }
+}
+
+

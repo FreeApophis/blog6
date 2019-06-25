@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= current_tenant ? current_tenant.name : "Blog 6" %></title>
+    <title><%= current_tenant ? current_tenant.title : "Blog 6" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <style type="text/css">
@@ -16,7 +16,8 @@
         <div class="grid-notice">Your browser does not support grid ... get a real browser</div>
       </div>
       <header>
-        Header content
+        <h1><%= current_tenant ? current_tenant.title : "Blog 6" %></h1>
+        <h2><%= current_tenant ? current_tenant.tag_line : "" %></h1>
       </header>
 
       <nav>

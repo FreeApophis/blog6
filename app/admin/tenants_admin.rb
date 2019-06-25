@@ -12,6 +12,8 @@ Trestle.resource(:tenants) do
   form do |tenant|
     tab :tenant do
       text_field :name
+      text_field :title
+      text_field :tag_line
       select :design_theme_id, DesignTheme.all
     end
 
@@ -24,6 +26,6 @@ Trestle.resource(:tenants) do
   end
 
   params do |params|
-    params.require(:tenant).permit(:name, :design_theme_id)
+    params.require(:tenant).permit(:name, :title, :tag_line, :design_theme_id)
   end
 end

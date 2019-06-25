@@ -11,4 +11,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( trix.js trix.css tardis.css )
+Rails.application.config.assets.precompile += %w( trix.js trix.css simple_blog/main.css tardis/main.css )

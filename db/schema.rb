@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_10_070548) do
+ActiveRecord::Schema.define(version: 2019_05_10_134510) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "name", null: false
@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(version: 2019_05_10_070548) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.boolean "comments_allowed"
+    t.integer "comments_count", default: 0, null: false
     t.index ["slug"], name: "index_pages_on_slug", unique: true
   end
 
@@ -102,6 +104,13 @@ ActiveRecord::Schema.define(version: 2019_05_10_070548) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["key"], name: "index_settings_on_key"
     t.index ["tenant_id"], name: "index_settings_on_tenant_id"
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "tenantables", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= current_tenant ? current_tenant.title : "Blog 6" %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <style type="text/css">
@@ -17,7 +18,7 @@
       </div>
       <header>
         <h1><%= current_tenant ? current_tenant.title : "Blog 6" %></h1>
-        <h2><%= current_tenant ? current_tenant.tag_line : "" %></h1>
+        <h2><%= current_tenant ? current_tenant.tag_line : "" %></h2>
       </header>
 
       <nav>

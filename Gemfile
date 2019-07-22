@@ -36,6 +36,8 @@ gem 'pundit'
 
 # Administration Interface
 gem 'trestle'
+# Active storage support (images)
+gem 'trestle-active_storage'
 
 # Pagination
 gem 'kaminari'

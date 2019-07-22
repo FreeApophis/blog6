@@ -221,6 +221,9 @@ GEM
       kaminari (~> 1.1.0)
       railties (>= 4.2.0)
       sass-rails (>= 5.0.6)
+    trestle-active_storage (2.1.1)
+      rails (>= 5.2, < 6)
+      trestle (~> 0.8)
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -267,6 +270,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   trestle
+  trestle-active_storage
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,500');
+
+:root {
+    --warning-bg-color:#fcc;
+    --header-height: 171px;
+    --site-bg-start: #cfd9df;
+    --site-bg-end: #e2ebf0;
+    --tardis-blue: #003b6f;
+}
+
+html {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  font-size: 14pt;
+  background: var(--tardis-blue);
+}
+
+.header {
+  display: none;
+}
+
+header {
+  min-height: var(--header-height);
+
+  background-image: image-url("tardis/the-doctors.jpg");
+  background-color: #cccccc;
+  background-position: center; 
+  background-repeat: repeat; 
+
+}
+
+header > h1 {
+  margin-top: 120px;
+  background-color: rgba(0,0,0,0.8);
+  color: #ffffaa;
+  text-align: center;
+  border-bottom: 1px solid #ffffaa;
+}
+
+header > h2 {
+  display: none;
+}
+
+footer {
+  background: #444;
+  min-height: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+footer ul {
+ flex-grow: 1;
+}
+
+
+.container {
+  display: block;
+}
+
+@media only screen and (min-width: 1200px) {
+.container {
+  display:  grid;
+  grid-template-columns: 1fr 1200px 1fr;  
+  grid-template-rows: var(--header-height) 1fr 7em;  
+  min-height: 100vh;
+}
+
+header {
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+
+nav {
+  display: none;
+}
+
+main {
+  grid-column: 2/3;
+  grid-row: 2/3;
+
+  background: #eee;
+}
+
+aside {
+  display: none;
+}
+
+footer {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+
+}
+

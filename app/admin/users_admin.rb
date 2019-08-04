@@ -5,15 +5,20 @@ Trestle.resource(:users) do
 
   table do
     column :email
+    column :is_admin
     column :created_at, align: :center
     actions
   end
 
   form do |comment|
+    text_field :email
+    text_field :password
+    text_field :password_confirmation
+    check_box :is_admin
   end
 
 
   params do |params|
-    params.require(:user).permit()
+    params.require(:user).permit(:email, :is_admin, :password, :password_confirmation)
   end
 end

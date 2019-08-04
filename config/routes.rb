@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'blog_posts#index'
 
+  #mount ActiveStorage::Engine, at: '/admin/rails/active_storage'
+
   concern :commentable do
     resources :comments, only: [:create]
   end
@@ -10,4 +12,5 @@ Rails.application.routes.draw do
   resources :blog_posts, only:[:show, :index], concerns: [:commentable]
   resources :pages, only: [:show, :index], concerns: [:commentable]
   resources :tags, only: [:show, :index]
+  resources :wedding_guests
 end

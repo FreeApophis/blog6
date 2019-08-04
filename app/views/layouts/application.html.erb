@@ -37,12 +37,14 @@
       </nav>
 
       <main>
-        <div class="media-phone">Phone</div>
-        <div class="media-tablet-portrait">Tablet Portrait</div>
-        <div class="media-tablet-landscape">Tablet Landscape</div>
-        <div class="media-desktop-small">Small Desktop</div>
-        <div class="media-desktop">Desktop</div>
-        <div id="notice"><%= notice %></div>
+        <% if Rails.env == "development" %>
+          <div class="media-phone">Phone</div>
+          <div class="media-tablet-portrait">Tablet Portrait</div>
+          <div class="media-tablet-landscape">Tablet Landscape</div>
+          <div class="media-desktop-small">Small Desktop</div>
+          <div class="media-desktop">Desktop</div>
+          <div id="notice"><%= notice %></div>
+        <% end %>
 
         <%= yield %>
       </main>
@@ -53,8 +55,7 @@
 
       <footer>
         <ul>
-          <li><a href="#">Impressum</a></li>
-          <li><a href="#">Impressum</a></li>
+          <li><a href="/pages/impressum">Impressum</a></li>
         </ul>
         <ul>
         </ul>

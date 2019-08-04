@@ -3,6 +3,7 @@
  * 
  *                                         -----/
  *= require 'normalize'
+ *= require 'trix'
  *= require 'grid-support'
  *= require 'breakpoint-definitions'
  *= require 'tardis/blog6'

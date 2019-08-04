@@ -90,6 +90,28 @@ footer {
   grid-row: 3/4;
 }
 
+main h1 {
+  background: #dd4;
+  margin: 0;
+  padding: 20pt;
+}
+
+main h2 {
+  background: image-url("tardis/gallyfreyian.png");
+  color: #0af;
+  padding: 5pt 20pt;
+  margin: 0;
+}
+
+main p {
+  padding: 10pt 20pt; 
+}
+
+.trix-content ul {
+  padding: 10pt 20pt; 
+}
+
+
 
 }
 

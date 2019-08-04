@@ -5,5 +5,9 @@
 
 require("@rails/activestorage").start()
 
-require("trix")
+const trix = require("trix")
+
+trix.config.blockAttributes.heading1.tagName = "h2"
+trix.config.blockAttributes.default.tagName = "p"
+
 require("@rails/actiontext")

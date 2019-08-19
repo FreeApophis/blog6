@@ -11,8 +11,11 @@ module Trestle
         before_action :require_admin!
       end
 
+    protected
       def require_admin!
-      #  redirect_to "/", alert: "Only the president is authorized to access this area"
+        if current_user.is_admin == false
+          redirect_to "/", notice: "Only the president is authorized to access this area"
+        end
       end
 
     end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'blog_posts#index'
+  root 'root#show'
 
   #mount ActiveStorage::Engine, at: '/admin/rails/active_storage'
 

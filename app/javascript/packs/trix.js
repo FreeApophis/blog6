@@ -18,7 +18,7 @@ trix.config.blockAttributes.default.tagName = "p"
 
 
 // by default, trix can't handle relative links...
-input = trix.config.toolbar.content.querySelector("input[type=url]")
-input.type = "text"
+//input = trix.config.toolbar.content.querySelector("input[type=url]")
+//input.type = "text"
 
 require("@rails/actiontext")

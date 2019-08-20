@@ -6,4 +6,19 @@ module ApplicationHelper
       "fallback.css"
     end   
   end
+
+  def flash_key_to_class key
+    case key
+      when "notice"
+        "info"
+      when "succees"
+        "success"
+      when "warning"
+        "warning"
+      when "alert"
+        "error"
+      else
+        ""
+    end
+  end
 end

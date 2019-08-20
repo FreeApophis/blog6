@@ -13,8 +13,8 @@ module Trestle
 
     protected
       def require_admin!
-        if current_user.is_admin == false
-          redirect_to "/", notice: "Only the president is authorized to access this area"
+        if !current_user.is_admin
+          redirect_to "/", alert: "You do not have access to the admin interface."
         end
       end
 

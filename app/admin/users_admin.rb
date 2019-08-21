@@ -12,8 +12,8 @@ Trestle.resource(:users) do
 
   form do |comment|
     text_field :email
-    text_field :password
-    text_field :password_confirmation
+    password_field :password
+    password_field :password_confirmation
     check_box :is_admin
   end
 

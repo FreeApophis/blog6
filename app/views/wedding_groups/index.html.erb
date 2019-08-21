@@ -1,0 +1,11 @@
+<h1>Anmelden</h1>
+
+Hallo liebe Gäste, auf dieser Seite könnt ihr euch ganz einfach für die Hochzeit anmelden.
+
+<p>
+    <% @wedding_groups.each do |wedding_group| %>
+      <%= wedding_group.name %>
+    <% end %>
+
+    <%= select(:name, :name, @wedding_groups) %>
+</p>

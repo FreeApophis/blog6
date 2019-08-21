@@ -1,0 +1,43 @@
+:root {
+  --info-fg: #276f86;
+  --info-bg: #f8ffff;
+  --success-fg: #2c662d;
+  --success-bg: #fcfff5;;
+  --warning-fg: #573a08;
+  --warning-bg: #fffaf3;
+  --error-fg: #9f3a38;
+  --error-bg: #fff6f6;
+}
+
+.message {
+  margin: 1em 0;
+  padding: 1em 1.5em;
+  border-radius: 0em;
+  border-style: solid;
+  border-width: thin;
+}
+
+.info {
+  color: var(--info-fg);
+  background-color: var(--info-bg);
+  border-color: var(--info-fg);
+}
+
+.success {
+  color: var(--success-fg);
+  background-color: var(--success-bg);
+  border-color: var(--success-fg);
+}
+
+.warning {
+  color: var(--warning-fg);
+  background-color: var(--warning-bg);
+  border-color: var(--warning-fg);
+}
+
+.error {
+  color: var(--error-fg);
+  background-color: var(--error-bg);
+  border-color: var(--error-fg);
+}
+

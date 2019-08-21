@@ -21,6 +21,14 @@
     <%= form.text_field :password %>
   </div>
 
+  <%= form.fields_for :wedding_guests do |wedding_guest_form| %>
+    <p>
+        <%= wedding_guest_form.text_field :name %>
+        <%= wedding_guest_form.check_box :accepted %>
+    </p>
+  <% end %>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

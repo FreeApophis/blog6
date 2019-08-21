@@ -13,7 +13,11 @@
       <h3>Wedding</h3>
       <div>
         <% guest_text =  "#{WeddingGuest.where(accepted: true).count} of #{WeddingGuest.all.count} wedding guests" %>
-        Currently <%= link_to guest_text, wedding_guests_admin_index_path %> have accepted the invitation
+        Currently <%= link_to guest_text, wedding_guests_admin_index_path %> have accepted the invitation:
+        <ul>
+          <li><%= WeddingGuest.where(accepted: true, is_child: true).count %> children</li>
+          <li><%= WeddingGuest.where(accepted: true, is_child: false).count %> adults</li>
+        </ul>
       </div>
     </div>
   </div>

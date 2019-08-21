@@ -6,6 +6,7 @@ Trestle.resource(:wedding_groups) do
   table do
     column :name
     column :password
+    column :comment
     actions
   end
 

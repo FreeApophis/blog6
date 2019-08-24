@@ -7,7 +7,7 @@
     <div class="main-content">
       <h3>Admin</h3>
       <div>
-        Hello,  <%= current_user.email %>
+        Hello,  <%= current_user ? current_user.email : "How you got this far?" %>
       </div>
 
       <h3>Wedding</h3>

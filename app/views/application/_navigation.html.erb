@@ -1,0 +1,11 @@
+<input type="checkbox" id="hamburg">
+<label for="hamburg" class="hamburg">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</label>
+<ul>
+<% MenuItem.all.each do |menu_item| %>
+  <li><%= link_to menu_item.name, menu_item.path %></li>
+<% end %>
+</ul>

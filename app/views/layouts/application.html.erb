@@ -22,18 +22,7 @@
       </header>
 
       <nav>
-        <% if current_user  %>
-          Logged in: <%= current_user.email %>
-        <% else %>
-          Logged out
-        <% end %>
-
-        host: <%= request.host %><br>
-        <% if current_tenant  %>
-          tenant: <%= current_tenant.name %>
-        <% else %>
-          Unconfigured tenant
-        <% end %>
+        <%= render 'navigation' %>
       </nav>
 
       <main>
@@ -56,6 +45,21 @@
 
       <footer>
         <ul>
+          <li>
+            <% if current_user  %>
+              Logged in: <%= current_user.email %>
+            <% else %>
+              Logged out
+            <% end %>
+          </li>
+          <li>host: <%= request.host %></li>
+          <li>
+            <% if current_tenant  %>
+              tenant: <%= current_tenant.name %>
+            <% else %>
+              Unconfigured tenant
+            <% end %>
+          </li>
           <li><a href="/pages/impressum">Impressum</a></li>
           <li>Ties are cool</li>
         </ul>

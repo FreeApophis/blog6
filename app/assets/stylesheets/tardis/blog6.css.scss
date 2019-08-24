@@ -2,13 +2,12 @@
 
 :root {
     --warning-bg-color:#fcc;
-    --header-height: 171px;
     --site-bg-start: #cfd9df;
     --site-bg-end: #e2ebf0;
     --tardis-blue: #003b6f;
 }
 
-html {
+body {
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
   font-size: 14pt;
@@ -20,21 +19,22 @@ html {
 }
 
 header {
-  min-height: var(--header-height);
-
+  height: 171px;
+  margin: 0;
+  padding: 0;
   background-image: image-url("tardis/the-doctors.jpg");
   background-color: #cccccc;
   background-position: center; 
   background-repeat: repeat; 
-
+  overflow: hidden;
 }
 
-header > h1 {
-  margin-top: 120px;
+header h1 {
+  margin-top: 110px;
   background-color: rgba(0,0,0,0.8);
   color: #ffffaa;
   text-align: center;
-  border-bottom: 1px solid #ffffaa;
+  border-bottom: 1px solid #ffddaa;
 }
 
 header > h2 {
@@ -52,42 +52,142 @@ footer ul {
  flex-grow: 1;
 }
 
-
-.container {
-  display: block;
-}
-
-@media only screen and (min-width: 1200px) {
-.container {
-  display:  grid;
-  grid-template-columns: 1fr 1200px 1fr;  
-  grid-template-rows: var(--header-height) 1fr 7em;  
-  min-height: 100vh;
-}
-
-header {
-  grid-column: 1/4;
-  grid-row: 1/2;
-}
-
 nav {
-  display: none;
+    background: #222222;
+    overflow: hidden;
+}
+
+nav label.hamburg { 
+   margin-top: 10px;
+   display: block;
+   background: #555; width: 75px; height: 50px; 
+   position: relative; 
+   margin-left: auto; margin-right: auto;
+   border-radius: 4px; 
+}
+
+nav .line { 
+   position: absolute; 
+   left:10px;
+   height: 4px; width: 55px; 
+   background: #fff; border-radius: 2px;
+   display: block; 
+   transition: 0.5s; 
+   transform-origin: center; 
+}
+
+nav .line:nth-child(1) { top: 12px; }
+nav .line:nth-child(2) { top: 24px; }
+nav .line:nth-child(3) { top: 36px; }
+
+nav #hamburg:checked + .hamburg .line:nth-child(1){
+   transform: translateY(12px) rotate(-45deg);
+}
+
+nav #hamburg:checked + .hamburg .line:nth-child(2){
+   opacity:0;
+}
+
+nav #hamburg:checked + .hamburg .line:nth-child(3){
+   transform: translateY(-12px) rotate(45deg);
+}
+
+nav input#hamburg {display:none}
+
+nav #hamburg + label + ul { 
+    max-height: 0; 
+}
+
+nav #hamburg:checked + label + ul { 
+    max-height: 600px; 
+}
+
+nav ul{
+  overflow: hidden;
+  list-style: none;
+  padding:0;
+  background: #222b2f;
+  border-top: solid 0.3em black;
+  border-bottom: solid 0.3em black;
+  transition: max-height 0.8s ease-in-out;
+}
+
+nav ul li{
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+nav ul li a{
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  color: #848e92;
+  text-decoration: none;
+  text-align: center;
+  cursor: default;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  &:hover{
+    color: #fff;
+    background-color: #334c5d;
+  }
+}
+
+nav ul li a{
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid black;
 }
 
 main {
-  grid-column: 2/3;
-  grid-row: 2/3;
-
   background: #eee;
 }
 
-aside {
-  display: none;
-}
 
-footer {
-  grid-column: 2/3;
-  grid-row: 3/4;
+@media only screen and (min-width: 1200px) {
+  nav #hamburg {
+    display: none;
+  }
+
+  nav #hamburg + label + ul { 
+    max-height: 600px; 
+  }
+
+  nav label.hamburg { 
+    display: none;
+  }
+
+  .container {
+    display:  grid;
+    grid-template-columns: 1fr 300px 900px 1fr;  
+    grid-template-rows: 171px 1fr 7em;  
+    min-height: 100vh;
+  }
+
+  header {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+
+  nav {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  main {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+
+  aside {
+    display: none;
+  }
+
+  footer {
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
 }
 
 main h1 {
@@ -111,7 +211,4 @@ main p {
   padding: 10pt 20pt; 
 }
 
-
-
-}
 

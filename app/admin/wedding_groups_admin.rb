@@ -14,6 +14,7 @@ Trestle.resource(:wedding_groups) do
     static_field :generated_password, Devise.friendly_token.first(6).upcase
     text_field :name
     text_field :password
+    text_area :comment
   end
 
 

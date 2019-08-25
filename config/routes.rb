@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   resources :blog_posts, only:[:show, :index], concerns: [:commentable]
   resources :pages, only: [:show, :index], concerns: [:commentable]
   resources :tags, only: [:show, :index]
-  resources :wedding_groups, only: [:show, :index, :edit, :update], path: :rsvp
+
+  get 'rsvp/login', to: 'wedding_groups#login'
+  get 'rsvp/update', to: 'wedding_groups#edit'
+  put 'rsvp/update', to: 'wedding_groups#update'
 end

@@ -11,25 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
-  </div>
-
+  <h2><%= @wedding_group.name %></h2>
+  <p> Nicht vergessen unten auf 'Speichern' zu klicken nachdem ihr euch hier angemeldet habt.</p>
   <%= form.fields_for :wedding_guests do |wedding_guest_form| %>
-    <p>
-        <%= wedding_guest_form.text_field :name %>
-        <%= wedding_guest_form.check_box :accepted %>
-    </p>
+  <div style="margin: 1em;">
+    <strong><%= wedding_guest_form.object.name %></strong>
+    <div class="onoffswitch">
+      <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+      <%= wedding_guest_form.check_box :accepted, class: 'onoffswitch-checkbox' %>
+        <%= wedding_guest_form.label :accepted, class: 'onoffswitch-label' do %>
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+      <% end  %>
+    </div>
+  </div>
   <% end %>
 
-
-  <div class="actions">
-    <%= form.submit %>
+  <h2>Kommentar</h2>
+  <p>
+    <strong>Habt ihr noch besondere Wünsche, oder wir etwas vergessen?</strong>
+    Am besten ihr schreibt das genau jetzt unten als Kommentar hin, natürlich könnt ihr uns auch telefonisch oder per Mail noch wichtige Dinge mitteilen.
+    ThomasBruderer@gmx.net / +41 78 911 17 29 und SabrinaBruderer@gmx.net / +41 78 880 46 60 / +49 1522 5691789
+  </p>
+  <div style="margin: 1em;">
+    <%= form.text_area :comment, rows: '8', style: 'width: 100%' %>
   </div>
+
+
+  <p>
+    <%= form.submit "Speichern" %>
+  </p>
+
 <% end %>

@@ -2,7 +2,7 @@ class WeddingGroupsController < ApplicationController
    before_action :set_wedding_group, only: [:edit, :update]
 
   def login
-    @wedding_groups = WeddingGroup.all
+    @wedding_groups = WeddingGroup.all.order(:name)
   end
 
   def edit

@@ -11,5 +11,6 @@
  *= require 'tardis/tardis'
  *= require 'tardis/menu'
  *= require 'tardis/toggle-switch'
+ *= require 'tardis/buttons'
  */
 

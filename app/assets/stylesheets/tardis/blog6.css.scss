@@ -44,12 +44,11 @@ header > h2 {
 footer {
   background: #444;
   min-height: 20px;
-  display: flex;
-  align-items: flex-start;
 }
 
 footer ul {
- flex-grow: 1;
+  color: #aaa;
+  list-style: none;
 }
 
 nav {

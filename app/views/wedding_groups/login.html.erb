@@ -1,0 +1,12 @@
+<h1>Anmelden</h1>
+
+<p>
+Hallo liebe Gäste, auf dieser Seite könnt ihr euch ganz einfach für die Hochzeit anmelden.
+</p>
+<%= form_tag(rsvp_login_url, :method => :post) do %>
+<div class="login">
+  <div><%= collection_select(:wedding_group, :id, WeddingGroup.all, :id, :name, :prompt => true) %></div>
+  <div><%= password_field_tag(:password) %></div>
+  <div><%= submit_tag "An- oder Abmelden", class: 'button' %></div>
+</div>
+<% end %>

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :tags, only: [:show, :index]
 
   get 'rsvp/login', to: 'wedding_groups#login'
+  post 'rsvp/login', to: 'wedding_groups#login'
+  get 'rsvp/logout', to: 'wedding_groups#logout'
   get 'rsvp/update', to: 'wedding_groups#edit'
   put 'rsvp/update', to: 'wedding_groups#update'
 end

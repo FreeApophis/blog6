@@ -5,7 +5,9 @@ Hallo liebe Gäste, auf dieser Seite könnt ihr euch ganz einfach für die Hochz
 </p>
 <%= form_tag(rsvp_login_url, :method => :post) do %>
 <div class="login">
+  <h3>Name auswählen</h3>
   <div><%= collection_select(:wedding_group, :id, WeddingGroup.all, :id, :name, :prompt => true) %></div>
+  <h3>Passwort eingeben</h3>
   <div><%= password_field_tag(:password) %></div>
   <div><%= submit_tag "An- oder Abmelden", class: 'button' %></div>
 </div>

@@ -24,11 +24,21 @@ header {
   padding: 0;
   background-image: image-url("tardis/the-doctors.jpg");
   background-color: #cccccc;
-  background-position: center; 
+  background-position: 200px 0; 
   background-repeat: repeat; 
   overflow: hidden;
+  animation: slideleft 600s infinite linear;
 }
 
+@keyframes slideleft {
+    from {
+        background-position: 0 0;
+    }
+    
+    to {
+        background-position: 25000px 0;
+    }
+}
 header h1 {
   margin-top: 110px;
   background-color: rgba(0,0,0,0.8);

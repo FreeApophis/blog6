@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   #before_action :authenticate_user!
+  before_action :set_theme_view_path
 
   layout :get_layout
 
@@ -17,6 +18,10 @@ class ApplicationController < ActionController::Base
 
   def get_layout
     'application'
+  end
+
+  def set_theme_view_path
+    prepend_view_path(Rails.root.join('themes', current_tenant.design_theme.name, 'views'))
   end
 
   helper_method :current_tenant

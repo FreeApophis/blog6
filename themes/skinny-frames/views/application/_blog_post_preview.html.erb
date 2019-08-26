@@ -1,0 +1,24 @@
+<!-- post item-->
+<div class="post-item boxed style1 border-top pink">
+  <div class="post-image pull-left"><img src="https://picsum.photos/428/155" alt=""></div>
+  <div class="post-meta-links">
+    <%= link_to content_tag(:span, '2 Comments'), blog_post, class: 'btn btn-caps', style: 'outline: currentcolor none medium;', hidefocus: true %>
+    <%= link_to content_tag(:span, 'Read more'), blog_post, class: 'btn btn-caps btn-orange', style: 'outline: currentcolor none medium;', hidefocus: true %>
+  </div>
+  <div class="clear"></div>
+  <div class="inner clearfix">
+    <div class="post-title"><h2><a href="#" hidefocus="true" style="outline: currentcolor none medium;"><%= blog_post.title %></a></h2></div>
+    <div class="post-meta-top clearfix">
+      <div class="post-meta-about">
+        <span class="post-author">By <span>Johnathan Doe</span></span>
+        <span class="post-date">on Nov 19 , 2013</span>
+      </div>
+    </div>
+    <div class="post-desc">
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </p>
+    </div>
+  </div>
+</div>
+<!--/post item-->

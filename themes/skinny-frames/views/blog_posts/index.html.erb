@@ -1,0 +1,5 @@
+<div class="postlist">
+<% @blog_posts.each do |blog_post| %>
+  <%= render 'blog_post_preview', blog_post: blog_post %>
+<% end %>
+</div>

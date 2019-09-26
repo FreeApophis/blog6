@@ -9,7 +9,15 @@ Trestle.resource(:wedding_guests) do
 
   table do
     column :name
-    column :accepted
+    column :accepted, align: :center do |wedding_guest|
+      if wedding_guest.wedding_group.comment == nil
+        status_tag(icon('fa fa-question'))
+      elsif wedding_guest.accepted
+        status_tag(icon('fa fa-check'), :success)
+      else
+       status_tag(icon('fa fa-times'), :danger)
+      end
+    end
     column :is_child
     column :wedding_group
     actions
